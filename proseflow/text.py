@@ -13,8 +13,8 @@ STRING_FUNCS = ["capitalize", "count", "isalnum", "isalpha", "isascii", "isdecim
 # Cell
 # TODO: add convert so that i automatically converts a string/np array/dataframe/tensor into a list
 def text_to_vector(text_form, embedder):
-    embeddings = embedder.encode(sentences, convert_to_tensor=True)
-    return corpus_embeddings.cpu().detach().numpy()
+    embeddings = embedder.encode(text_form, convert_to_tensor=True)
+    return embeddings.cpu().detach().numpy()
 
 # Cell
 def create_index(vectors):
