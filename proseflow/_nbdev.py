@@ -2,7 +2,23 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"load": "load.ipynb",
+index = {"get_boto_session": "aws_utils.ipynb",
+         "write_json_to_s3": "aws_utils.ipynb",
+         "write_df_to_s3": "aws_utils.ipynb",
+         "read_df_from_s3": "aws_utils.ipynb",
+         "read_json_from_s3": "aws_utils.ipynb",
+         "load": "load.ipynb",
+         "remove_html_tags": "roam_utils.ipynb",
+         "remove_buttons": "roam_utils.ipynb",
+         "remove_url": "roam_utils.ipynb",
+         "remove_attr": "roam_utils.ipynb",
+         "replace_block_ref": "roam_utils.ipynb",
+         "remove_duplicates": "roam_utils.ipynb",
+         "clean_sentence": "roam_utils.ipynb",
+         "is_too_short": "roam_utils.ipynb",
+         "has_stop_symbols": "roam_utils.ipynb",
+         "stop_symbols": "roam_utils.ipynb",
+         "roam_graph_to_blocks": "roam_utils.ipynb",
          "gsheet_to_df": "spec.ipynb",
          "GSHEET": "spec.ipynb",
          "TRANSFORMER": "spec.ipynb",
@@ -14,10 +30,19 @@ index = {"load": "load.ipynb",
          "STANZA_MODEL": "spec.ipynb",
          "TRANSFORMS": "spec.ipynb",
          "SPEC": "spec.ipynb",
-         "infer_type": "spec.ipynb"}
+         "infer_type": "spec.ipynb",
+         "STRING_FUNCS": "text.ipynb",
+         "text_to_vector": "text.ipynb",
+         "create_index": "text.ipynb",
+         "create_embedding_files_for_visualization": "utils.ipynb",
+         "pipe": "utils.ipynb"}
 
-modules = ["load.py",
-           "spec.py"]
+modules = ["aws_utils.py",
+           "load.py",
+           "roam_utils.py",
+           "spec.py",
+           "text.py",
+           "utils.py"]
 
 doc_url = "https://mkstra.github.io/proseflow/"
 

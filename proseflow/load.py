@@ -6,7 +6,6 @@ __all__ = ['load', 'load', 'load', 'load']
 import json
 import os
 import re
-from collections import Iterable
 from collections.abc import Iterable
 from io import BytesIO
 from typing import Dict
@@ -19,10 +18,12 @@ import stanza
 from dotenv import load_dotenv
 from multipledispatch import dispatch
 from pandas import DataFrame
-from sentence_transformers import models
+from sentence_transformers import SentenceTransformer, models
 from spacy_stanza import StanzaLanguage
 from textacy.corpus import Corpus
 from typeguard import typechecked
+
+from .spec import *
 
 # Cell
 # Example: https://docs.google.com/spreadsheets/d/1N_aANmDaosjAlodJ5nMNVPfe6REsDtsNYHj_ltH3Q_0/edit?usp=drive_web&ouid=112317186249575590696
@@ -33,7 +34,7 @@ def _load_gsheet(
     sheet_number: int = 0,
     credential_path: str = os.getenv("GSHEET_CREDENTIALS"),
     **kwargs,
-) -> "GSHEET":
+) -> GSHEET:
     if not credential_path:
         raise Exception("Add the $GSHEET_CREDENTIALS variable to your .env file.")
     gc = gspread.service_account(filename=credential_path)
@@ -50,14 +51,15 @@ def _load_corpus(nlp, path):
 
     return corpus
 
-# Cell
 
+# Cell
 
 # TODO: [Rico] make it work with "stanza" or "sci-md" strings
 #export
 @dispatch((spacy.language.Language, StanzaLanguage), str)
 def load(nlp, path):
     return _load_corpus(nlp, path)
+
 
 # Cell
 @dispatch(Iterable)
@@ -67,6 +69,7 @@ def load(resource, **kwargs):
     """
     shape_iterable = convert(resource, source=type(resource), target=list)
     return load(shape_iterable, **kwargs)
+
 
 # Cell
 #export
@@ -93,14 +96,14 @@ def _load_transformer(model_name):
     return models.Transformer(model_name)
 
 # Cell
-def _load_spacy(model_name: str = "en_core_web_sm") -> spacy.language.Language:
+def _load_spacy(model_name: str = "en_core_web_sm", **kwargs) -> spacy.language.Language:
     print("Loading SpaCy...")
     try:
-        nlp = spacy.load(model_name)
+        nlp = spacy.load(model_name, **kwargs)
     except OSError:
         try:
             spacy.cli.download(model_name)
-            nlp = spacy.load(model_name)
+            nlp = spacy.load(model_name, **kwargs)
         except:
             print("Download the SpaCy model before trying to import it.")
             return None
@@ -153,7 +156,7 @@ def load(resource, *args, **kwargs):
                 gs = gs[kwargs.get("columns")]
         return gs
     if shape == SPACY_MODEL:
-        return _load_spacy(resource)
+        return _load_spacy(resource, **kwargs)
     if shape == STANZA_MODEL:
         if as_type:
             kwargs.pop("as_type")
@@ -161,6 +164,8 @@ def load(resource, *args, **kwargs):
         if as_type:
             return convert(snlp, source=STANZA_MODEL, target=SPACY_MODEL)
         return snlp
+    if shape == SENTENCE_TRANSFORMER:
+        return SentenceTransformer(resource)
     if shape == TRANSFORMER:
         transformer_model = _load_transformer(resource)
         if as_type:
