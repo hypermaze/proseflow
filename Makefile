@@ -11,6 +11,9 @@ proseflow: $(SRC)
 build:
 	poetry run nbdev_build_lib
 
+kernel:
+	poetry run python -m ipykernel install --user --name proseflow
+
 sync:
 	poetry run nbdev_update_lib
 
