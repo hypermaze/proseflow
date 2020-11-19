@@ -53,6 +53,40 @@ python-versions = "*"
 numpy = ">=1.15.0"
 
 [[package]]
+<<<<<<< HEAD
+=======
+category = "main"
+description = "The AWS SDK for Python"
+name = "boto3"
+optional = false
+python-versions = "*"
+version = "1.16.21"
+
+[package.dependencies]
+botocore = ">=1.19.21,<1.20.0"
+jmespath = ">=0.7.1,<1.0.0"
+s3transfer = ">=0.3.0,<0.4.0"
+
+[[package]]
+category = "main"
+description = "Low-level, data-driven core of boto 3."
+name = "botocore"
+optional = false
+python-versions = "*"
+version = "1.19.21"
+
+[package.dependencies]
+jmespath = ">=0.7.1,<1.0.0"
+python-dateutil = ">=2.1,<3.0.0"
+
+[package.dependencies.urllib3]
+python = "<3.4.0 || >=3.5.0"
+version = ">=1.25.4,<1.27"
+
+[[package]]
+category = "main"
+description = "Extensible memoizing collections and decorators"
+>>>>>>> f4f22dbb36b9c57a6abcf54974371c30c04d5835
 name = "cachetools"
 version = "4.1.1"
 description = "Extensible memoizing collections and decorators"
@@ -197,10 +231,22 @@ name = "executing"
 version = "0.5.3"
 description = "Get the currently executing AST node of a frame, and other information"
 category = "main"
+<<<<<<< HEAD
 optional = false
 python-versions = "*"
 
 [[package]]
+=======
+description = "A library for efficient similarity search and clustering of dense vectors."
+name = "faiss-cpu"
+optional = false
+python-versions = "*"
+version = "1.6.4.post2"
+
+[[package]]
+category = "main"
+description = "Python supercharged for fastai development"
+>>>>>>> f4f22dbb36b9c57a6abcf54974371c30c04d5835
 name = "fastcore"
 version = "1.3.6"
 description = "Python supercharged for fastai development"
@@ -389,6 +435,19 @@ MarkupSafe = ">=0.23"
 i18n = ["Babel (>=0.8)"]
 
 [[package]]
+<<<<<<< HEAD
+=======
+category = "main"
+description = "JSON Matching Expressions"
+name = "jmespath"
+optional = false
+python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
+version = "0.10.0"
+
+[[package]]
+category = "main"
+description = "Lightweight pipelining: using Python functions as pipeline jobs."
+>>>>>>> f4f22dbb36b9c57a6abcf54974371c30c04d5835
 name = "joblib"
 version = "0.17.0"
 description = "Lightweight pipelining: using Python functions as pipeline jobs."
@@ -780,6 +839,12 @@ python-versions = "*"
 pyasn1 = ">=0.4.6,<0.5.0"
 
 [[package]]
+<<<<<<< HEAD
+=======
+category = "main"
+description = "C parser in Python"
+marker = "implementation_name == \"=pypy\" or sys_platform == \"linux\" and implementation_name == \"=pypy\" or sys_platform == \"linux\""
+>>>>>>> f4f22dbb36b9c57a6abcf54974371c30c04d5835
 name = "pycparser"
 version = "2.20"
 description = "C parser in Python"
@@ -988,6 +1053,22 @@ python-versions = ">=3.5, <4"
 pyasn1 = ">=0.1.3"
 
 [[package]]
+<<<<<<< HEAD
+=======
+category = "main"
+description = "An Amazon S3 Transfer Manager"
+name = "s3transfer"
+optional = false
+python-versions = "*"
+version = "0.3.3"
+
+[package.dependencies]
+botocore = ">=1.12.36,<2.0a.0"
+
+[[package]]
+category = "main"
+description = "SacreMoses"
+>>>>>>> f4f22dbb36b9c57a6abcf54974371c30c04d5835
 name = "sacremoses"
 version = "0.0.43"
 description = "SacreMoses"
@@ -1417,7 +1498,12 @@ optional = false
 python-versions = "*"
 
 [metadata]
+<<<<<<< HEAD
 lock-version = "1.1"
+=======
+content-hash = "9f2d3056d196d98dd5bc52f5582b89e660531b322b883db3280d7e95eac62266"
+lock-version = "1.0"
+>>>>>>> f4f22dbb36b9c57a6abcf54974371c30c04d5835
 python-versions = "^3.8"
 content-hash = "d5cf04893cc849d45419cac8dfbc882633f5f49929f1fbf9f72099fc6a2cbc72"
 
@@ -1455,6 +1541,14 @@ blis = [
     {file = "blis-0.4.1-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:00473602629ba69fe6565108e21957e918cb48b59f5bf2f6bfb6e04de42500cb"},
     {file = "blis-0.4.1-cp38-cp38-win_amd64.whl", hash = "sha256:856142a11e37fd2c47c5006a3197e157bb8469a491a73d2d442223dd3279df84"},
     {file = "blis-0.4.1.tar.gz", hash = "sha256:d69257d317e86f34a7f230a2fd1f021fd2a1b944137f40d8cdbb23bd334cd0c4"},
+]
+boto3 = [
+    {file = "boto3-1.16.21-py2.py3-none-any.whl", hash = "sha256:dd63506b8b5e46be0b55d18ab9a62dea8b3b46aa46ce6c3b1fc4e41788c375b8"},
+    {file = "boto3-1.16.21.tar.gz", hash = "sha256:7a8063418d11690a8ee87bc1c3e32aa4830aee20e3767fe780a99a7fa2410b13"},
+]
+botocore = [
+    {file = "botocore-1.19.21-py2.py3-none-any.whl", hash = "sha256:3b01898413ab3a5bc6a15d449d2a35d8061c7142b86d4419a08860c8935e0d38"},
+    {file = "botocore-1.19.21.tar.gz", hash = "sha256:8f065fb5ca2271ec76e791c23136f72b11f5c917a1b6502cc627fd0a882de8a0"},
 ]
 cachetools = [
     {file = "cachetools-4.1.1-py3-none-any.whl", hash = "sha256:513d4ff98dd27f85743a8dc0e92f55ddb1b49e060c2d5961512855cda2c01a98"},
@@ -1580,9 +1674,25 @@ entrypoints = [
     {file = "entrypoints-0.3-py2.py3-none-any.whl", hash = "sha256:589f874b313739ad35be6e0cd7efde2a4e9b6fea91edcc34e58ecbb8dbe56d19"},
     {file = "entrypoints-0.3.tar.gz", hash = "sha256:c70dd71abe5a8c85e55e12c19bd91ccfeec11a6e99044204511f9ed547d48451"},
 ]
+<<<<<<< HEAD
 executing = [
     {file = "executing-0.5.3-py3-none-any.whl", hash = "sha256:40efed75ec660b765e1a34aca43a9d257f68ecf52e209ec8073faad2be895e35"},
     {file = "executing-0.5.3.tar.gz", hash = "sha256:0c039c841e0b606fca7774b42302697b2f0eca78b4d0e3e582024cf881776379"},
+=======
+faiss-cpu = [
+    {file = "faiss-cpu-1.6.4.post2.tar.gz", hash = "sha256:4974555ed3c92246e1b829e45463b8ebad88cb8f8b41d9aa595a7d528cd4e1ba"},
+    {file = "faiss_cpu-1.6.4.post2-cp36-cp36m-macosx_10_14_x86_64.whl", hash = "sha256:ceb1174c9194265230d81778839a4dc9c7b47762abb3a0f3c47e12c949335c6f"},
+    {file = "faiss_cpu-1.6.4.post2-cp36-cp36m-manylinux2014_x86_64.whl", hash = "sha256:733bb9a8be5952abfadff84e2b5101da5d90ee15985b5a00b0e62e7505f45ff7"},
+    {file = "faiss_cpu-1.6.4.post2-cp36-cp36m-win_amd64.whl", hash = "sha256:87b4325d9c3f4babf8b180b5851df5a25d0680b7205eb714de726675b897680b"},
+    {file = "faiss_cpu-1.6.4.post2-cp37-cp37m-macosx_10_14_x86_64.whl", hash = "sha256:7f870ae68eb1129f503d1eddbd14e96f1eacb3a14a9e4236bf5449dfb3d9c647"},
+    {file = "faiss_cpu-1.6.4.post2-cp37-cp37m-manylinux2014_x86_64.whl", hash = "sha256:1901df446940a341a69937d19edc0a31e8aeb2334904bdc00a37148311dfc02a"},
+    {file = "faiss_cpu-1.6.4.post2-cp37-cp37m-win_amd64.whl", hash = "sha256:176730f7fb96ab44e0a67a181873e5cdf0f77a3c3680c2e4ecddb84b8911ee42"},
+    {file = "faiss_cpu-1.6.4.post2-cp38-cp38-macosx_10_14_x86_64.whl", hash = "sha256:3f073fd4e50dbe7aaf77571680a2916387fb1b2460127ba9cab8f1039d189781"},
+    {file = "faiss_cpu-1.6.4.post2-cp38-cp38-manylinux2014_x86_64.whl", hash = "sha256:47dde3c45ff627b8019b1dc0c182af86513c2f0ca87a895ffcd618d5c2bba6ce"},
+    {file = "faiss_cpu-1.6.4.post2-cp38-cp38-win_amd64.whl", hash = "sha256:1e48d19fbccd92ec39e083afcc9a7292b959045121175c3b9d44a9af4d0ec403"},
+    {file = "faiss_cpu-1.6.4.post2-cp39-cp39-macosx_10_14_x86_64.whl", hash = "sha256:9a8de60c80d5f8325c99beaad735e20f7c1b85495436e06c41a82245d22ad616"},
+    {file = "faiss_cpu-1.6.4.post2-cp39-cp39-manylinux2014_x86_64.whl", hash = "sha256:a77383851ae6f630b93ea367196a115f547928ffb69887c6707b66b158a58612"},
+>>>>>>> f4f22dbb36b9c57a6abcf54974371c30c04d5835
 ]
 fastcore = [
     {file = "fastcore-1.3.6-py3-none-any.whl", hash = "sha256:867edb56c933dba787066eaadb339e94f397504f22bbfaebdf4689d6f8f5ee50"},
@@ -1641,6 +1751,10 @@ jellyfish = [
 jinja2 = [
     {file = "Jinja2-2.11.2-py2.py3-none-any.whl", hash = "sha256:f0a4641d3cf955324a89c04f3d94663aa4d638abe8f733ecd3582848e1c37035"},
     {file = "Jinja2-2.11.2.tar.gz", hash = "sha256:89aab215427ef59c34ad58735269eb58b1a5808103067f7bb9d5836c651b3bb0"},
+]
+jmespath = [
+    {file = "jmespath-0.10.0-py2.py3-none-any.whl", hash = "sha256:cdf6525904cc597730141d61b36f2e4b8ecc257c420fa2f4549bac2c2d0cb72f"},
+    {file = "jmespath-0.10.0.tar.gz", hash = "sha256:b85d0567b8666149a93172712e68920734333c0ce7e89b78b3e987f71e5ed4f9"},
 ]
 joblib = [
     {file = "joblib-0.17.0-py3-none-any.whl", hash = "sha256:698c311779f347cf6b7e6b8a39bb682277b8ee4aba8cf9507bc0cf4cd4737b72"},
@@ -2078,6 +2192,10 @@ rfc3986 = [
 rsa = [
     {file = "rsa-4.6-py3-none-any.whl", hash = "sha256:6166864e23d6b5195a5cfed6cd9fed0fe774e226d8f854fcb23b7bbef0350233"},
     {file = "rsa-4.6.tar.gz", hash = "sha256:109ea5a66744dd859bf16fe904b8d8b627adafb9408753161e766a92e7d681fa"},
+]
+s3transfer = [
+    {file = "s3transfer-0.3.3-py2.py3-none-any.whl", hash = "sha256:2482b4259524933a022d59da830f51bd746db62f047d6eb213f2f8855dcb8a13"},
+    {file = "s3transfer-0.3.3.tar.gz", hash = "sha256:921a37e2aefc64145e7b73d50c71bb4f26f46e4c9f414dc648c6245ff92cf7db"},
 ]
 sacremoses = [
     {file = "sacremoses-0.0.43.tar.gz", hash = "sha256:123c1bf2664351fb05e16f87d3786dbe44a050cfd7b85161c09ad9a63a8e2948"},
