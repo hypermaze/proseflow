@@ -1,16 +1,24 @@
 [tool.poetry]
 name = "proseflow"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
-authors = ["Markus Strasser <strasser.ms@gmail.com>"]
+authors = ["Rico Meinl <rmeinl97@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
 nbdev = "^1.1.5"
-jupyter = "^1.0.0"
-jupyterlab = "^2.2.9"
-jupyterlab-git = "^0.23.1"
-ipywidgets = "^7.5.1"
+multipledispatch = "^0.6.0"
+gspread = "^3.6.0"
+pandas = "^1.1.4"
+textacy = "^0.10.1"
+spacy_stanza = "^0.2.4"
+sentence_transformers = "^0.3.9"
+spacy = "^2.3.2"
+stanza = "^1.1.1"
+requests = "^2.25.0"
+python-dotenv = "^0.15.0"
+typeguard = "^2.10.0"
+twine = "^3.2.0"
 
 [tool.poetry.dev-dependencies]
 
