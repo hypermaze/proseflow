@@ -40,6 +40,7 @@ index = {"get_boto_session": "aws_utils.ipynb",
          "STRING_FUNCS": "text.ipynb",
          "text_to_vector": "text.ipynb",
          "create_index": "text.ipynb",
+         "query_index": "text.ipynb",
          "create_embedding_files_for_visualization": "utils.ipynb",
          "pipe": "utils.ipynb",
          "dedupe_conseq": "utils.ipynb"}

@@ -10,9 +10,6 @@ from typing import List, Tuple
 import numpy as np
 from varname import varname, nameof
 
-from .load import load
-
-
 from numpy import ndarray
 from pandas import DataFrame, Series
 from sentence_transformers import SentenceTransformer, models
