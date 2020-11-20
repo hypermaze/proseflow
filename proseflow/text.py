@@ -5,6 +5,7 @@ __all__ = ['STRING_FUNCS', 'text_to_vector', 'create_index']
 # Cell
 from fastcore.basics import listify
 import faiss
+from typing import List
 
 # Cell
 STRING_FUNCS = ["capitalize", "count", "isalnum", "isalpha", "isascii", "isdecimal", "isdigit", "isidentifier", "islower",
