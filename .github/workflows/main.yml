@@ -14,7 +14,7 @@ jobs:
         #pip install nbdev jupyter wheel setuptools
         #pip install -e .
         pip install poetry
-        poetry init --no-interaction
+        poetry config virtualenvs.create false
         poetry install
     - name: Read all notebooks
       run: |
