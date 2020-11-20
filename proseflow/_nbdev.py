@@ -32,6 +32,10 @@ index = {"get_boto_session": "aws_utils.ipynb",
          "STANZA_MODEL": "spec.ipynb",
          "HTML_TAG": "spec.ipynb",
          "HTML_TAG_ROAM": "spec.ipynb",
+<<<<<<< HEAD
+=======
+         "URL": "spec.ipynb",
+>>>>>>> a14e8bd829c84febe07c9b766b14c0e4b1edddb4
          "SPEC": "spec.ipynb",
          "infer_type": "spec.ipynb",
          "TRANSFORMS": "spec.ipynb",
@@ -40,7 +44,8 @@ index = {"get_boto_session": "aws_utils.ipynb",
          "text_to_vector": "text.ipynb",
          "create_index": "text.ipynb",
          "create_embedding_files_for_visualization": "utils.ipynb",
-         "pipe": "utils.ipynb"}
+         "pipe": "utils.ipynb",
+         "dedupe_conseq": "utils.ipynb"}
 
 modules = ["aws_utils.py",
            "load.py",

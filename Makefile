@@ -48,6 +48,3 @@ dist: clean
 
 clean:
 	rm -rf dist
-    
-kernel:
-	poetry run python -m ipykernel install --user --name proseflow
