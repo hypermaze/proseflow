@@ -11,8 +11,11 @@ jobs:
         architecture: 'x64'
     - name: Install the library
       run: |
-        pip install nbdev jupyter wheel setuptools
-        pip install -e .
+        #pip install nbdev jupyter wheel setuptools
+        #pip install -e .
+        pip install poetry
+        poetry init --no-interaction
+        poetry install
     - name: Read all notebooks
       run: |
         nbdev_read_nbs
