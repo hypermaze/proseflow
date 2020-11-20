@@ -142,7 +142,7 @@ def load(resource, *args, **kwargs):
         pass  # scrape (params:)
 
     shape = kwargs.get("input_type") or infer_type(resource)
-
+    print(shape, "shape", kwargs)
     as_type = kwargs.get("as_type")
     should_convert = as_type is not None
     if shape == GSHEET:

@@ -8,6 +8,8 @@ proseflow: $(SRC)
 	poetry run nbdev_build_lib
 	touch proseflow
     
+fix:
+	poetry run nbdev_fix_merge 
 build:
 	poetry run nbdev_build_lib
 
