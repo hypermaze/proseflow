@@ -1,6 +1,9 @@
 *.bak
 .gitattributes
 .last_checked
+data
+/data
+
 *.bak
 *.log
 *~
