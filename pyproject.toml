@@ -2,17 +2,16 @@
 name = "proseflow"
 version = "0.1.2"
 description = ""
-authors = ["Rico Meinl <rmeinl97@gmail.com>"]
+authors = ["Markus Strasser <strasser.ms@gmail.com> Rico Meinl <rmeinl97@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7.2"
 nbdev = "^1.1.5"
 multipledispatch = "^0.6.0"
 gspread = "^3.6.0"
 pandas = "^1.1.4"
 textacy = "^0.10.1"
 spacy_stanza = "^0.2.4"
-sentence_transformers = "^0.3.9"
 spacy = "^2.3.2"
 stanza = "^1.1.1"
 requests = "^2.25.0"
@@ -29,6 +28,12 @@ autopep8 = "^1.5.4"
 isort = "^5.6.4"
 jupyter_nbextensions_configurator = "^0.4.1"
 en-ner-bionlp13cg-md = {url = "https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.3.0/en_ner_bionlp13cg_md-0.3.0.tar.gz"}
+jupyter = "^1.0.0"
+lab = "^6.2"
+jupyterlab = "^2.2.9"
+jupyterlab-git = "^0.23.2"
+sentence-transformers = "^0.3"
+simpletransformers = "^0.51.3"
 
 [tool.poetry.dev-dependencies]
 

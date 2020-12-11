@@ -3,7 +3,8 @@
 .last_checked
 data
 /data
-
+/outputs
+outputs
 *.bak
 *.log
 *~
