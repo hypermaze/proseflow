@@ -30,11 +30,12 @@ jupyter_nbextensions_configurator = "^0.4.1"
 en-ner-bionlp13cg-md = {url = "https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.3.0/en_ner_bionlp13cg_md-0.3.0.tar.gz"}
 jupyter = "^1.0.0"
 lab = "^6.2"
-jupyterlab = "^2.2.9"
 jupyterlab-git = "^0.23.2"
 sentence-transformers = "^0.3"
 simpletransformers = "^0.51.3"
 beautifulsoup4 = "^4.9.3"
+jupyterlab = "3.0.6"
+tabulate = "^0.8.9"
 
 [tool.poetry.dev-dependencies]
 

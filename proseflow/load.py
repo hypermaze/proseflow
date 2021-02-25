@@ -135,7 +135,7 @@ def load(resource, *args, **kwargs):
 
 
     if resource.endswith(".csv"):
-        pass
+        return pd.read_csv(resource)
     if resource.endswith(".tsv"):
         pass
     if resource == "some url":
