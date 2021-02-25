@@ -45,6 +45,15 @@ PUBMED_CONTENT = {
 EMAIL = {
     "name": "EMAIL"
 }
+
+# JSON = {
+#     "re": "(.*?)\.(json)$"
+# }
+
+# TEXT = {
+#     "re": "(.*?)\.(txt)$"
+# }
+
 SPACY_MODEL = {
     "re": "(zh|da|nl|en|fr|de|el|it|ja|lt|nb|pl|pt|ro|es|xx)[_(core|ent|ner)_(web|news|wiki|sci|craft|jnlpba|bc5cdr|bionlp13cg)_(sm|md|lg)]*$"
 }
@@ -73,7 +82,7 @@ URL = {
 """
 ? Dynamically create Types in NameSpace aka TRANSFORMER = "TRANSFORMER"
 """
-SPEC = [GSHEET, TRANSFORMER, SENTENCE_TRANSFORMER, PUBMED_CONTENT, PUBMED_IDS, SPACY_MODEL, STANZA_MODEL, EMAIL, HTML_TAG]
+SPEC = [GSHEET, JSON, TEXT, TRANSFORMER, SENTENCE_TRANSFORMER, PUBMED_CONTENT, PUBMED_IDS, SPACY_MODEL, STANZA_MODEL, EMAIL, HTML_TAG]
 
 # Cell
 def infer_type(form, SPEC=SPEC):
@@ -99,8 +108,6 @@ def infer_type(form, SPEC=SPEC):
         print("No Match found in type inference, returning None")
         return None
     return match[0]
-
-
 
 # Cell
 def _transformer_to_sentence_transformer(transformer_model):

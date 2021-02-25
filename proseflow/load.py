@@ -51,15 +51,11 @@ def _load_corpus(nlp, path):
 
     return corpus
 
-
 # Cell
-
-# TODO: [Rico] make it work with "stanza" or "sci-md" strings
 #export
 @dispatch((spacy.language.Language, StanzaLanguage), str)
 def load(nlp, path):
     return _load_corpus(nlp, path)
-
 
 # Cell
 @dispatch(Iterable)
@@ -69,7 +65,6 @@ def load(resource, **kwargs):
     """
     shape_iterable = convert(resource, source=type(resource), target=list)
     return load(shape_iterable, **kwargs)
-
 
 # Cell
 #export
@@ -140,6 +135,10 @@ def load(resource, *args, **kwargs):
         pass
     if resource == "some url":
         pass  # scrape (params:)
+    if resource.endswith(".json"):
+        return _load_json(resource)
+    if resource.endswith(".txt"):
+        return _load_txt(resource)
 
     shape = kwargs.get("input_type") or infer_type(resource)
     print(shape, "shape", kwargs)
