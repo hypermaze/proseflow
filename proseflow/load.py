@@ -44,18 +44,10 @@ def _load_gsheet(
     return worksheet
 
 # Cell
-def _load_corpus(nlp, path):
-    corpus = Corpus(nlp).load(nlp, path)
-    for label in labels:
-        nlp.vocab.strings.add(label)
-
-    return corpus
-
-# Cell
 #export
 @dispatch((spacy.language.Language, StanzaLanguage), str)
 def load(nlp, path):
-    return _load_corpus(nlp, path)
+    return Corpus(nlp).load(nlp, path)
 
 # Cell
 @dispatch(Iterable)
@@ -65,6 +57,7 @@ def load(resource, **kwargs):
     """
     shape_iterable = convert(resource, source=type(resource), target=list)
     return load(shape_iterable, **kwargs)
+
 
 # Cell
 #export

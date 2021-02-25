@@ -82,7 +82,7 @@ URL = {
 """
 ? Dynamically create Types in NameSpace aka TRANSFORMER = "TRANSFORMER"
 """
-SPEC = [GSHEET, JSON, TEXT, TRANSFORMER, SENTENCE_TRANSFORMER, PUBMED_CONTENT, PUBMED_IDS, SPACY_MODEL, STANZA_MODEL, EMAIL, HTML_TAG]
+SPEC = [GSHEET, TRANSFORMER, SENTENCE_TRANSFORMER, PUBMED_CONTENT, PUBMED_IDS, SPACY_MODEL, STANZA_MODEL, EMAIL, HTML_TAG]
 
 # Cell
 def infer_type(form, SPEC=SPEC):
@@ -108,6 +108,8 @@ def infer_type(form, SPEC=SPEC):
         print("No Match found in type inference, returning None")
         return None
     return match[0]
+
+
 
 # Cell
 def _transformer_to_sentence_transformer(transformer_model):
