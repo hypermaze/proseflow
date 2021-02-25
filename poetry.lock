@@ -1503,6 +1503,17 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
+name = "pydash"
+version = "4.9.2"
+description = "The kitchen sink of Python utility libraries for doing \"stuff\" in a functional way. Based on the Lo-Dash Javascript library."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+dev = ["coverage", "docformatter", "flake8", "invoke", "mock", "pylint", "pytest", "pytest-cov", "pytest-flake8", "pytest-pylint", "sphinx", "sphinx-rtd-theme", "tox", "twine", "wheel", "black", "flake8-black", "flake8-bugbear", "flake8-isort", "isort"]
+
+[[package]]
 name = "pydeck"
 version = "0.6.1"
 description = "Widget for deck.gl maps"
@@ -2504,7 +2515,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.2"
-content-hash = "8a637992cd8e56d094f0bdb10d6113b0e2f00da9f147c1c89e03962d584a218d"
+content-hash = "facb431886599a85b080d4300be9949f4cd5522e2991c80bb40655c9f5dfaf6b"
 
 [metadata.files]
 altair = [
@@ -3361,6 +3372,10 @@ pycodestyle = [
 pycparser = [
     {file = "pycparser-2.20-py2.py3-none-any.whl", hash = "sha256:7582ad22678f0fcd81102833f60ef8d0e57288b6b5fb00323d101be910e35705"},
     {file = "pycparser-2.20.tar.gz", hash = "sha256:2d475327684562c3a96cc71adf7dc8c4f0565175cf86b6d7a404ff4c771f15f0"},
+]
+pydash = [
+    {file = "pydash-4.9.2-py2.py3-none-any.whl", hash = "sha256:dab98145502528369bd05034f6fb2b520297d49f942cfd51dc9cdc2cd47ec368"},
+    {file = "pydash-4.9.2.tar.gz", hash = "sha256:11d8f3c92d92a004e042fdb226b10dba28f4e311546b0de89d983e91539d5e55"},
 ]
 pydeck = [
     {file = "pydeck-0.6.1-py2.py3-none-any.whl", hash = "sha256:9f77d28b45504010c48cc7a43bbc2108749862f6738f94dba2e9ad16a39b0be1"},

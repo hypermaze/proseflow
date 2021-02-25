@@ -36,6 +36,7 @@ simpletransformers = "^0.51.3"
 beautifulsoup4 = "^4.9.3"
 jupyterlab = "3.0.6"
 tabulate = "^0.8.9"
+pydash = "^4.9.2"
 
 [tool.poetry.dev-dependencies]
 
