@@ -38,6 +38,8 @@ biopython = "^1.78"
 textacy = "^0.10.1"
 spacy-stanza = "^0.2.4"
 more-itertools = "^8.7.0"
+deplacy = "^1.9.1"
+graphviz = "^0.16"
 
 [tool.poetry.dev-dependencies]
 
