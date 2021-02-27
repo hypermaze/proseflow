@@ -5,8 +5,8 @@ __all__ = ['STRING_FUNCS', 'text_to_vector', 'create_index', 'query_index', 'ent
            'show_negex_entities', 'get_token_and_entities_as_spans', 'add_pipes_mutative', 'rsetattr', 'rgetattr',
            'get_entity_diff', 'merge_named_entities', 'print_table', 'show_noun_chunks', 'doc_has_entity_labels',
            'get_merged_docs_for_texts', 'get_tokenidx_for_char', 'extract_named_entities_info', 'pattern_vis',
-           'prep_pattern', 'add_matches', 'get_lemma', 'check_for_non_trees', 'annotate_NER', 'construct_pattern',
-           'match_texts']
+           'prep_pattern', 'add_matches', 'get_lemma', 'check_for_non_trees', 'annotate_NER', 'construct_pattern_old',
+           'construct_pattern', 'match_texts']
 
 # Cell
 from fastcore.basics import listify
@@ -489,6 +489,73 @@ def annotate_NER(model, gpu=False):
     """"""
     model(gpu)
 
+def construct_pattern_old(rules: List[List[str]]):
+    """
+    Idea: add patterns to a matcher designed to find a subtree in a spacy dependency tree.
+    Rules are strictly of the form "CHILD --rel--> PARENT". To build this up, we add rules
+    in DFS order, so that the parent nodes have already been added to the dict for each child
+    we encounter.
+    """
+    # Step 1: Build up a dictionary mapping parents to their children
+    # in the dependency subtree. Whilst we do this, we check that there is
+    # a single node which has only outgoing edges.
+
+    if "dep" in {rule[1] for rule in rules}:
+        return None
+
+    ret = check_for_non_trees(rules)
+
+    if ret is None:
+        return None
+    else:
+        root, parent_to_children = ret
+
+    def add_node(parent: str, pattern: List):
+
+        for (rel, child) in parent_to_children[parent]:
+
+            # First, we add the specification that we are looking for
+            # an edge which connects the child to the parent.
+            node = {
+                "SPEC": {
+                    "NODE_NAME": child,
+                    "NBOR_RELOP": ">",
+                    "NBOR_NAME": parent},
+            }
+
+            # DANGER we can only have these options IF we also match ORTH below, otherwise it's torturously slow.
+            # token_pattern = {"DEP": {"IN": ["amod", "compound"]}}
+
+            # Now, we specify what attributes we want this _token_
+            # to have - in this case, we want to match a certain dependency
+            # relation specifically.
+            token_pattern = {"DEP": rel}
+
+            # Additionally, we can specify more token attributes. So here,
+            # if the node refers to the start or end entity, we require that
+            # the word is part of an entity (spacy syntax is funny for this)
+            # and that the word is a noun, as there are some verbs annotated as "entities" in medmentions.
+
+            if child in {"START_ENTITY", "END_ENTITY"}:
+                token_pattern["ENT_TYPE"] = {"NOT_IN": [""]}
+                token_pattern["POS"] = "NOUN"
+
+            # If we are on part of the path which is not the start/end entity,
+            # we want the word to match. This could be made very flexible, e.g matching
+            # verbs instead, etc.
+            else:
+                token_pattern["ORTH"] = child
+
+            node["PATTERN"] = token_pattern
+
+            pattern.append(node)
+            add_node(child, pattern)
+
+    pattern = [{"SPEC": {"NODE_NAME": root}, "PATTERN": {"ORTH": root}}]
+    add_node(root, pattern)
+
+    assert len(pattern) < 20
+    return pattern
 
 def construct_pattern(
     rules: List[List[str]], lemmatize=True, start_ents=None, end_ents=None, log_info=[]

@@ -1260,6 +1260,19 @@ tgrep = ["pyparsing"]
 twitter = ["twython"]
 
 [[package]]
+name = "nmslib"
+version = "2.1.1"
+description = "Non-Metric Space Library (NMSLIB)"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+numpy = {version = ">=1.10.0", markers = "python_version >= \"3.5\""}
+psutil = "*"
+pybind11 = "<2.6.2"
+
+[[package]]
 name = "notebook"
 version = "6.2.0"
 description = "A web-based notebook environment for interactive computing"
@@ -1527,6 +1540,17 @@ python-versions = "*"
 pyasn1 = ">=0.4.6,<0.5.0"
 
 [[package]]
+name = "pybind11"
+version = "2.6.1"
+description = "Seamless operability between C++11 and Python"
+category = "main"
+optional = false
+python-versions = "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7"
+
+[package.extras]
+global = ["pybind11-global (==2.6.1)"]
+
+[[package]]
 name = "pycodestyle"
 version = "2.6.0"
 description = "Python style guide checker"
@@ -1613,6 +1637,14 @@ description = "Persistent/Functional/Immutable data structures"
 category = "main"
 optional = false
 python-versions = ">=3.5"
+
+[[package]]
+name = "pysbd"
+version = "0.3.4"
+description = "pysbd (Python Sentence Boundary Disambiguation) is a rule-based sentence boundary detection that works out-of-the-box across many languages."
+category = "main"
+optional = false
+python-versions = ">=3"
 
 [[package]]
 name = "python-dateutil"
@@ -1862,6 +1894,23 @@ python-versions = ">=3.7"
 
 [package.dependencies]
 numpy = ">=1.16.5"
+
+[[package]]
+name = "scispacy"
+version = "0.2.5"
+description = "A full SpaCy pipeline and models for scientific/biomedical documents."
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.dependencies]
+joblib = "*"
+nmslib = ">=1.7.3.6"
+numpy = "*"
+pysbd = "*"
+requests = ">=2.0.0,<3.0.0conllu"
+scikit-learn = ">=0.20.3"
+spacy = ">=2.3.0,<3.0.0"
 
 [[package]]
 name = "secretstorage"
@@ -2555,7 +2604,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.2"
-content-hash = "5aee465102dfbe774cb96aae78cd20b8655ea25636f2996b07b10dfcf7256833"
+content-hash = "bc1d2a6b13dd8bd5b498252cd62aa39ba1cef783378b4882f4e2a130da39ee28"
 
 [metadata.files]
 altair = [
@@ -3192,6 +3241,43 @@ networkx = [
 nltk = [
     {file = "nltk-3.5.zip", hash = "sha256:845365449cd8c5f9731f7cb9f8bd6fd0767553b9d53af9eb1b3abf7700936b35"},
 ]
+nmslib = [
+    {file = "nmslib-2.1.1-cp27-cp27m-macosx_10_14_x86_64.whl", hash = "sha256:495ace1146bb1e89ef585a490fa65de19a87fa0d5bb029f3156402a431fc3558"},
+    {file = "nmslib-2.1.1-cp27-cp27m-macosx_10_15_x86_64.whl", hash = "sha256:c0ae48f01e63e70dc1e45b28cb1b1478ca09588a21127f1d4473afb22ff3bbbc"},
+    {file = "nmslib-2.1.1-cp27-cp27m-manylinux1_x86_64.whl", hash = "sha256:97b3f1af2c163369a043449dec7f05d681aa23c00f9d77bee09fd8f31ba41815"},
+    {file = "nmslib-2.1.1-cp27-cp27m-manylinux2010_x86_64.whl", hash = "sha256:2061e94f980666bffff4f2173bf2b58a763062dee9cedab11ec46001e576c6b5"},
+    {file = "nmslib-2.1.1-cp27-cp27m-win_amd64.whl", hash = "sha256:e8b30bab631258b36e751d217180cdba0d2f942d779d4444cbc57a5173ee19ad"},
+    {file = "nmslib-2.1.1-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:191a23dea20c0ad855e78df41a90273020f76d878c52aa1a80557ca83cf0f392"},
+    {file = "nmslib-2.1.1-cp27-cp27mu-manylinux2010_x86_64.whl", hash = "sha256:eae9a1d640a9e4c52c43272620f54f367f03ce25d8b07218fd90dfc204d5c49d"},
+    {file = "nmslib-2.1.1-cp35-cp35m-macosx_10_14_x86_64.whl", hash = "sha256:c22ffc3376d41b4b4e63d89ec5db2cf2e2051881827d658c94632800bed87e5b"},
+    {file = "nmslib-2.1.1-cp35-cp35m-macosx_10_15_x86_64.whl", hash = "sha256:a1ff4aeb143747106994a68dfcc29b097fc4562f632f2709f8f467b93d7181e2"},
+    {file = "nmslib-2.1.1-cp35-cp35m-manylinux2010_x86_64.whl", hash = "sha256:5ce529d4f9b572135cdc5a18f04d3cbe258f1f440f8a06ab7209428a3b4c30d6"},
+    {file = "nmslib-2.1.1-cp35-cp35m-win_amd64.whl", hash = "sha256:00f5b37305837fd5656ab4a65c4f0c9bc8e44cc9cf77cc9222f4153a72f0c727"},
+    {file = "nmslib-2.1.1-cp36-cp36m-macosx_10_14_x86_64.whl", hash = "sha256:08cb77c3fc2a346edc3407bd985b63a05bd0ec0d6d81ff2c6f7d6eb6bfbdbc1d"},
+    {file = "nmslib-2.1.1-cp36-cp36m-macosx_10_15_x86_64.whl", hash = "sha256:7dcc203450c9d95a551e9564646b9d0179edbde0874373ad63739b7e25a9980c"},
+    {file = "nmslib-2.1.1-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:db4b817f0896e0bbc836722c67b51bc237dc79477d2d383ced344d755705d409"},
+    {file = "nmslib-2.1.1-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:1b120f7766a52c4016c6b8889b34d97eddbb60a16fd39eb5a81e73ca101baf3e"},
+    {file = "nmslib-2.1.1-cp36-cp36m-manylinux2014_aarch64.whl", hash = "sha256:9e5cd5d492bf7290adacac797ee092c863d230f3797d0db6a120a1a05c665be2"},
+    {file = "nmslib-2.1.1-cp36-cp36m-win_amd64.whl", hash = "sha256:0a80e574c3e6bfb724dbb77cbaec53cf9f4366382c2c0a9a2f5148c69b646afe"},
+    {file = "nmslib-2.1.1-cp37-cp37m-macosx_10_14_x86_64.whl", hash = "sha256:7b0d916f219b4044cd31e8f6bda92a7f23d68cb3f34f1c7da81e5852702d6ce0"},
+    {file = "nmslib-2.1.1-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:a2129a7519ab73d3544ab6fa2f6c6c4c54644bf3d1c60d6929dcaac49c9307e6"},
+    {file = "nmslib-2.1.1-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:0f5c1c7e3c398a4ed7eaed65cd91776022b2ca4b8f15e504fa22c89da9333257"},
+    {file = "nmslib-2.1.1-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:c5a644d32ad3b2e24635a839d17d9d53d01a47ca55d1ba0d051f51f49df7e98a"},
+    {file = "nmslib-2.1.1-cp37-cp37m-manylinux2014_aarch64.whl", hash = "sha256:fc75c7e128fd19c21c8cd73a1681a32d902bf5203699321cdfff8cf98607c82d"},
+    {file = "nmslib-2.1.1-cp37-cp37m-win_amd64.whl", hash = "sha256:43118bb64f06e62662a8c7f1fe54ae699a078b438e3f8cb75db547731a5e73f6"},
+    {file = "nmslib-2.1.1-cp38-cp38-macosx_10_14_x86_64.whl", hash = "sha256:1b87f7a5813cabedef47b289337ab1eefa4e62485a05884c2dbe7ba1d9c327a4"},
+    {file = "nmslib-2.1.1-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:ca3d4eb91232078fb96eaa938a4dcbcfb3da48a7800350e1ded70d8d3e6e65a5"},
+    {file = "nmslib-2.1.1-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:b6ebb53999672abf7811ef35e2ec3d76b2a845fd5dbaa5482e2cc445481d87cf"},
+    {file = "nmslib-2.1.1-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:26062f5f172c35038c46feabb5c60c104808c167db0c3dfab19d11eb99f18b85"},
+    {file = "nmslib-2.1.1-cp38-cp38-manylinux2014_aarch64.whl", hash = "sha256:ed63fda2a5572391a0a540689f00d390040b9255e08012ea43344958cea92f36"},
+    {file = "nmslib-2.1.1-cp38-cp38-win_amd64.whl", hash = "sha256:6a3aa123d85c188fc64cb8957e5cdded9c8c57bea2c6a5866fe06c729e6e6e85"},
+    {file = "nmslib-2.1.1-cp39-cp39-macosx_10_14_x86_64.whl", hash = "sha256:3fe5bbf304fdde50f3a55329efcf26d4ba4eb1181885877a1baab1df900dd671"},
+    {file = "nmslib-2.1.1-cp39-cp39-macosx_10_15_x86_64.whl", hash = "sha256:7b5a561a71dce6d56b32ea89a591dbe477b4173fbc3e9a1153d534bc248ae7b5"},
+    {file = "nmslib-2.1.1-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:82680077a06a817df95ea716260231245cf077a4c08b0f39148d4a58d2eb58f2"},
+    {file = "nmslib-2.1.1-cp39-cp39-manylinux2010_x86_64.whl", hash = "sha256:be54644e1a1a6e2539e565fe24415997f18656a5260276c40266cacb70e2a9ab"},
+    {file = "nmslib-2.1.1-cp39-cp39-manylinux2014_aarch64.whl", hash = "sha256:3681e3e9160fa9661192c19202402e22151e016cf365621609ae5ca4a4677d21"},
+    {file = "nmslib-2.1.1.tar.gz", hash = "sha256:971294a7766f91c697d63c88c8adda4797a944346cc535a217393f4167a19c20"},
+]
 notebook = [
     {file = "notebook-6.2.0-py3-none-any.whl", hash = "sha256:25ad93c982b623441b491e693ef400598d1a46cdf11b8c9c0b3be6c61ebbb6cd"},
     {file = "notebook-6.2.0.tar.gz", hash = "sha256:0464b28e18e7a06cec37e6177546c2322739be07962dd13bf712bcb88361f013"},
@@ -3453,6 +3539,10 @@ pyasn1-modules = [
     {file = "pyasn1_modules-0.2.8-py3.6.egg", hash = "sha256:cbac4bc38d117f2a49aeedec4407d23e8866ea4ac27ff2cf7fb3e5b570df19e0"},
     {file = "pyasn1_modules-0.2.8-py3.7.egg", hash = "sha256:c29a5e5cc7a3f05926aff34e097e84f8589cd790ce0ed41b67aed6857b26aafd"},
 ]
+pybind11 = [
+    {file = "pybind11-2.6.1-py2.py3-none-any.whl", hash = "sha256:c3691da74b670a4850dec30c1145a0dad53a50eeca78b7e7cdc855b5c98fd32d"},
+    {file = "pybind11-2.6.1.tar.gz", hash = "sha256:ab7e60a520fe6ae25eca939191bb2ac416cd58478ce754740238a8bf1af18934"},
+]
 pycodestyle = [
     {file = "pycodestyle-2.6.0-py2.py3-none-any.whl", hash = "sha256:2295e7b2f6b5bd100585ebcb1f616591b652db8a741695b3d8f5d28bdc934367"},
     {file = "pycodestyle-2.6.0.tar.gz", hash = "sha256:c58a7d2815e0e8d7972bf1803331fb0152f867bd89adf8a01dfd55085434192e"},
@@ -3487,6 +3577,9 @@ pyphen = [
 ]
 pyrsistent = [
     {file = "pyrsistent-0.17.3.tar.gz", hash = "sha256:2e636185d9eb976a18a8a8e96efce62f2905fea90041958d8cc2a189756ebf3e"},
+]
+pysbd = [
+    {file = "pysbd-0.3.4-py3-none-any.whl", hash = "sha256:cd838939b7b0b185fcf86b0baf6636667dfb6e474743beeff878e9f42e022953"},
 ]
 python-dateutil = [
     {file = "python-dateutil-2.8.1.tar.gz", hash = "sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"},
@@ -3706,6 +3799,10 @@ scipy = [
     {file = "scipy-1.6.1-cp39-cp39-win32.whl", hash = "sha256:8e403a337749ed40af60e537cc4d4c03febddcc56cd26e774c9b1b600a70d3e4"},
     {file = "scipy-1.6.1-cp39-cp39-win_amd64.whl", hash = "sha256:a5193a098ae9f29af283dcf0041f762601faf2e595c0db1da929875b7570353f"},
     {file = "scipy-1.6.1.tar.gz", hash = "sha256:c4fceb864890b6168e79b0e714c585dbe2fd4222768ee90bc1aa0f8218691b11"},
+]
+scispacy = [
+    {file = "scispacy-0.2.5-py3-none-any.whl", hash = "sha256:7971f7e1a0449cd7436a751fe82cddaebe1d77f0cd0b0b2b64c21e393b69cc01"},
+    {file = "scispacy-0.2.5.tar.gz", hash = "sha256:69d77013d2980f98da2e0f3ee6b01f3cb64ab7bd10e418c9b0e49ba90a5f7f76"},
 ]
 secretstorage = [
     {file = "SecretStorage-3.3.1-py3-none-any.whl", hash = "sha256:422d82c36172d88d6a0ed5afdec956514b189ddbfb72fefab0c8a1cee4eaf71f"},

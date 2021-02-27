@@ -2,7 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"get_boto_session": "aws_utils.ipynb",
+index = {"V": "V.ipynb",
+         "build_hierplane_tree": "V.ipynb",
+         "get_boto_session": "aws_utils.ipynb",
          "write_json_to_s3": "aws_utils.ipynb",
          "write_df_to_s3": "aws_utils.ipynb",
          "read_df_from_s3": "aws_utils.ipynb",
@@ -90,6 +92,7 @@ index = {"get_boto_session": "aws_utils.ipynb",
          "get_lemma": "text.ipynb",
          "check_for_non_trees": "text.ipynb",
          "annotate_NER": "text.ipynb",
+         "construct_pattern_old": "text.ipynb",
          "construct_pattern": "text.ipynb",
          "match_texts": "text.ipynb",
          "merge_csv_in_dir": "utils.ipynb",
@@ -104,7 +107,8 @@ index = {"get_boto_session": "aws_utils.ipynb",
          "pipe": "utils.ipynb",
          "dedupe_conseq": "utils.ipynb"}
 
-modules = ["aws_utils.py",
+modules = ["V.py",
+           "aws_utils.py",
            "datasethelpers.py",
            "load.py",
            "networks.py",

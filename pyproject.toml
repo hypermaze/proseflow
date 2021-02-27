@@ -5,6 +5,7 @@ description = ""
 authors = ["Markus Strasser <strasser.ms@gmail.com> Rico Meinl <rmeinl97@gmail.com>"]
 
 [tool.poetry.dependencies]
+en_core_sci_md = {url = "https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.5/en_core_sci_md-0.2.5.tar.gz"}
 python = "^3.7.2"
 nbdev = "^1.1.5"
 multipledispatch = "^0.6.0"
@@ -40,6 +41,7 @@ spacy-stanza = "^0.2.4"
 more-itertools = "^8.7.0"
 deplacy = "^1.9.1"
 graphviz = "^0.16"
+scispacy = "0.2.5"
 
 [tool.poetry.dev-dependencies]
 
