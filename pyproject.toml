@@ -10,8 +10,6 @@ nbdev = "^1.1.5"
 multipledispatch = "^0.6.0"
 gspread = "^3.6.0"
 pandas = "^1.1.4"
-textacy = "^0.10.1"
-spacy = "^2.3.2"
 stanza = "^1.1.1"
 requests = "^2.25.0"
 python-dotenv = "^0.15.0"
@@ -37,7 +35,9 @@ jupyterlab = "3.0.6"
 tabulate = "^0.8.9"
 pydash = "^4.9.2"
 biopython = "^1.78"
+textacy = "^0.10.1"
 spacy-stanza = "^0.2.4"
+more-itertools = "^8.7.0"
 
 [tool.poetry.dev-dependencies]
 
