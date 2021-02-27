@@ -57,64 +57,61 @@ class WikiMed:
 
 class GNBR:
     @staticmethod
-    def get_data_and_distributions(DIR_PATH=GNBR_PATH):
+    def get_distributions(FILE_PATH):
         with open(
-            DIR_PATH + "part-i-chemical-gene-path-theme-distributions.txt", "r"
+            FILE_PATH, "r"
         ) as f:
             l = f.readlines()  # bad and inefficient....
-            headers = l[1].strip().split("\t")[1:]
-            # headers = next(f).strip().split("\t")[1:] --this did return [] most of the time
-            print(
-                headers,
-                "headers",
-                """
-                            chemical-gene
-                    (A+) agonism, activation
-                    (A-) antagonism, blocking
-                    (B) binding, ligand (esp. receptors)
-                    (E+) increases expression/production
-                    (E-) decreases expression/production
-                    (E) affects expression/production (neutral)
-                    (N) inhibits
-                            """,
-            )
+            headers = l[0].strip().split("\t")[1:]
+    #         # headers = next(f).strip().split("\t")[1:] --this did return [] most of the time
+    #         print(
+    #             headers,
+    #             "headers",
+    #             """
+    #                         chemical-gene
+    #                 (A+) agonism, activation
+    #                 (A-) antagonism, blocking
+    #                 (B) binding, ligand (esp. receptors)
+    #                 (E+) increases expression/production
+    #                 (E-) decreases expression/production
+    #                 (E) affects expression/production (neutral)
+    #                 (N) inhibits
+    #                         """,
+    #         )
             distributions = {}
             # incredibly dumb way of doing this because the fileread IO is buggy or just bad
-            for line in l[2:]:
+            for line in l[1:]:
                 line = line.strip().split("\t")
 
-                distributions[line[0]] = {
-                    name: float(value) for name, value in zip(headers, line[1:])
-                }
+                distributions[line[0].lower()] = [float(val) for val in line[1:]]
+        return distributions
+#
+#
+    @staticmethod
+    def get_data(FILE_PATH):
+        with open(FILE_PATH,"r") as data:
+            data_headers = [
+                "pmid",
+                "sent",
+                "ent1",
+                "ent1_offset",
+                "ent2",
+                "ent2_offset",
+                "ent1_raw",
+                "ent2_raw",
+                "ent1_canonical",
+                "ent2_canonical",
+                "ent1_type",
+                "ent2_type",
+                "dep",
+                "sent",
+            ]
 
-            with open(
-                DIR_PATH
-                + "part-ii-dependency-paths-chemical-gene-sorted-with-themes.txt",
-                "r",
-            ) as data:
-                data_headers = [
-                    "pmid",
-                    "sent",
-                    "ent1",
-                    "ent1_offset",
-                    "ent2",
-                    "ent2_offset",
-                    "ent1_raw",
-                    "ent2_raw",
-                    "ent1_canonical",
-                    "ent2_canonical",
-                    "ent1_type",
-                    "ent2_type",
-                    "dep",
-                    "sent",
-                ]
-
-                lines = [
-                    {k: v for k, v in zip(data_headers, line.strip().split("\t"))}
-                    for line in data
-                ]
-
-        return lines, distributions
+            lines = [
+                {k: (v.lower() if k=="dep" else v) for k, v in zip(data_headers, line.strip().split("\t"))}
+                for line in data
+            ]
+            return lines
 
     @staticmethod
     def fixup():
